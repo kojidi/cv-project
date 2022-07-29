@@ -5,8 +5,8 @@ import './styles/App.css';
 function App() {
   return (
     <div className="main-contianer">
-      <GeneralInformation />
-      <EducationalInformation />
+        <GeneralInformation />
+        <EducationalInformation />
     </div>
   );
 }
