@@ -1,6 +1,7 @@
 import React from "react";
 import Educations from "./Educations";
 import '../styles/EducationalStyle.css';
+import uniqid from 'uniqid';
 
 class EducationalInformation extends React.Component {
     constructor() {
@@ -9,7 +10,7 @@ class EducationalInformation extends React.Component {
         this.state = {
             addingStatus: false,
             values: {
-                id: 1,
+                id: uniqid(),
                 university: "",
                 fromYear: "",
                 toYear: "",
@@ -19,14 +20,11 @@ class EducationalInformation extends React.Component {
             edus: [],
         }
 
+        this.handleChange = this.handleChange.bind(this);
         this.handleAddingStatus = this.handleAddingStatus.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleAdding = this.handleAdding.bind(this);
-        this.addUniversity = this.addUniversity.bind(this);
-        this.addFromYear = this.addFromYear.bind(this);
-        this.addToYear = this.addToYear.bind(this);
-        this.addDegree = this.addDegree.bind(this);
-        this.addGrade = this.addGrade.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleAddingStatus() {
@@ -49,47 +47,11 @@ class EducationalInformation extends React.Component {
         })
     }
 
-    addUniversity(e) {
+    handleChange(e) {
         this.setState(prevState => ({
             values: {                  
                 ...prevState.values,    
-                university: e.target.value      
-            }
-        }))
-    }
-
-    addFromYear(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                fromYear: e.target.value      
-            }
-        }))
-    }
-
-    addToYear(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                toYear: e.target.value      
-            }
-        }))
-    }
-
-    addDegree(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                degree: e.target.value      
-            }
-        }))
-    }
-
-    addGrade(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                grade: e.target.value      
+                [e.target.name]: e.target.value      
             }
         }))
     }
@@ -98,7 +60,7 @@ class EducationalInformation extends React.Component {
         this.setState({
             edus: this.state.edus.concat(this.state.values),
             values: {
-                id: this.state.id + 1,
+                id: uniqid(),
                 university: "",
                 fromYear: "",
                 toYear: "",
@@ -108,13 +70,24 @@ class EducationalInformation extends React.Component {
             addingStatus: false
         })
     }
+
+    handleDelete(e) {
+        if(window.confirm("Are you sure")) {
+            const result = this.state.edus.filter(d => {
+                return d.id !== e.target.name
+            })
+            this.setState({
+                edus: result
+            })
+        }
+    }
     
     render() {
         const {addingStatus, values, edus} = this.state;
         return (
             <div className="edu-container">
-                <h1>Education: </h1>
-                <Educations data={edus}/>
+                <h2>Education: </h2>
+                <Educations data={edus} handleDeleteEdu={this.handleDelete}/>
 
                 {!addingStatus ? 
                     <button className="btn add-btn" onClick={this.handleAddingStatus}>+Add</button>
@@ -123,19 +96,19 @@ class EducationalInformation extends React.Component {
                     <div className="add-edu">
                         <div className="left-inputs">
                             <label htmlFor="university">University's Name: </label>
-                            <input id="university" placeholder="Enter the name ..." value={values.university} onChange={this.addUniversity}/>
+                            <input id="university" placeholder="Enter the name ..." value={values.university} name="university" onChange={this.handleChange}/>
                             <div className="year-inputs">
                                 <label htmlFor="from-year">From: </label>
-                                <input id="from-year" placeholder="YYYY" value={values.fromYear} onChange={this.addFromYear}/>
+                                <input id="from-year" placeholder="YYYY" value={values.fromYear} name="fromYear" onChange={this.handleChange}/>
                                 <label htmlFor="to-year">To: </label>
-                                <input id="to-year" placeholder="YYYY" value={values.toYear} onChange={this.addToYear}/>
+                                <input id="to-year" placeholder="YYYY" value={values.toYear} name="toYear" onChange={this.handleChange}/>
                             </div>
                         </div>
                         <div className="right-inputs">
                             <label htmlFor="degree">Degree: </label>
-                            <input id="degree" placeholder="Your Degree" value={values.degree} onChange={this.addDegree}/>
+                            <input id="degree" placeholder="Your Degree" value={values.degree} name="degree" onChange={this.handleChange}/>
                             <label htmlFor="grade">Grade: </label>
-                            <input id="grade" placeholder="Your Final Grade" value={values.grade} onChange={this.addGrade}/>
+                            <input id="grade" placeholder="Your Final Grade" value={values.grade} name="grade" onChange={this.handleChange}/>
 
                             <div className="adding-btns">
                                 <button className="btn add-btn" onClick={this.handleAdding}>Add</button>

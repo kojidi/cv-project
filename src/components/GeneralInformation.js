@@ -29,12 +29,7 @@ class GeneralInformation extends React.Component {
         this.handleEdit = this.handleEdit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
-        this.handleFullname = this.handleFullname.bind(this);
-        this.handleOccupation = this.handleOccupation.bind(this);
-        this.handleCountry = this.handleCountry.bind(this);
-        this.handleCity = this.handleCity.bind(this);
-        this.handleEmail = this.handleEmail.bind(this);
-        this.handlePhone = this.handlePhone.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleEdit() {
@@ -51,56 +46,11 @@ class GeneralInformation extends React.Component {
         })
     }
 
-    handleFullname(e) {
+    handleChange(e) {
         this.setState(prevState => ({
             values: {                  
                 ...prevState.values,    
-                fullname: e.target.value      
-            }
-        }))
-    }
-
-    handleOccupation(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                occupation: e.target.value      
-            }
-        }))
-    }
-
-    handleCountry(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                country: e.target.value      
-            }
-        }))
-    }
-
-    handleCity(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                city: e.target.value      
-            }
-        }))
-    }
-
-    handleEmail(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                email: e.target.value      
-            }
-        }))
-    }
-
-    handlePhone(e) {
-        this.setState(prevState => ({
-            values: {                  
-                ...prevState.values,    
-                phone: e.target.value      
+                [e.target.name]: e.target.value      
             }
         }))
     }
@@ -135,14 +85,14 @@ class GeneralInformation extends React.Component {
                         <section className="contents">
                             <div className="general-main-content">
                                 <img src={avatar} alt="user-avatar" />
-                                <input type="text" placeholder="Full Name" value={values.fullname} onChange={this.handleFullname}/>
-                                <input type="text" placeholder="Occupation" value={values.occupation} onChange={this.handleOccupation}/>
+                                <input type="text" placeholder="Full Name" value={values.fullname} name="fullname" onChange={this.handleChange}/>
+                                <input type="text" placeholder="Occupation" value={values.occupation} name="occupation" onChange={this.handleChange}/>
                             </div>
                             <div className="general-unessential-content">
-                                <input type="text" placeholder="Country" value={values.country} onChange={this.handleCountry}/>
-                                <input type="text" placeholder="City" value={values.city} onChange={this.handleCity}/>
-                                <input type="text" placeholder="Email" value={values.email} onChange={this.handleEmail}/>
-                                <input type="text" placeholder="Phone" value={values.phone} onChange={this.handlePhone}/>
+                                <input type="text" placeholder="Country" value={values.country} name="country" onChange={this.handleChange}/>
+                                <input type="text" placeholder="City" value={values.city} name="city" onChange={this.handleChange}/>
+                                <input type="text" placeholder="Email" value={values.email} name="email" onChange={this.handleChange}/>
+                                <input type="text" placeholder="Phone" value={values.phone} name="phone" onChange={this.handleChange}/>
                             </div>
                         </section>
 

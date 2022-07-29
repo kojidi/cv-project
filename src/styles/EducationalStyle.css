@@ -5,6 +5,11 @@
     padding: 40px;
 }
 
+.edu-container h2 {
+    /* font-size: 1.5rem; */
+    margin-bottom: 15px;
+}
+
 .edu-container .btn {
     width: 120px;
     padding: 8px 10px;

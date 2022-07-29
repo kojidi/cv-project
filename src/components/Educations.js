@@ -4,12 +4,6 @@ import '../styles/Educations.css';
 class Educations extends React.Component {
     constructor(props) {
         super(props);
-
-        this.handleDelete = this.handleDelete.bind(this)
-    }
-
-    handleDelete(e) {
-        console.log(e);
     }
 
     render() {
@@ -30,7 +24,7 @@ class Educations extends React.Component {
                         <div>
                             <p><b>Grade:</b> {e.grade}</p>
                             <button className="edit-btn">Edit</button>
-                            <button onClick={this.handleDelete(e.id)} className="delete-btn">Delete</button>
+                            <button name={e.id} onClick={this.props.handleDeleteEdu} className="delete-btn">Delete</button>
                         </div>
                     </div>
                 ))}
