@@ -1,0 +1,36 @@
+
+.edulist-container .eduitems {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #333; */
+    margin: 8px auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.edulist-container .eduitems button {
+    width: fit-content;
+    padding: 5px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 10px 0 0;
+}
+
+.edulist-container .eduitems .edit-btn {
+    background-color: #2ecc71;
+}
+.edulist-container .eduitems .delete-btn {
+    background-color: #e74c3c;
+}
+
+.edulist-container .eduitems p {
+    margin-bottom: 5px;
+}
+
+.edulist-container .eduitems div {
+    width: 100%;
+}

@@ -1,0 +1,70 @@
+.edu-container {
+    width: 800px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #333;
+    padding: 40px;
+}
+
+.edu-container .btn {
+    width: 120px;
+    padding: 8px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem
+}
+
+.edu-container .add-btn {
+        background-color: #2980b9;
+}
+.edu-container .add-edu .add-btn {
+    background-color: #2ecc71;
+    margin-right: 5px;
+}
+.edu-container .cancel-btn {
+    background-color: #e74c3c;
+}
+
+.add-edu {
+    /* margin: 15px; */
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.add-edu .left-inputs,
+.add-edu .right-inputs {
+    width: 100%;
+    padding: 15px;
+}
+
+.add-edu .right-inputs {
+    position: relative;
+}
+
+.adding-btns {
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+}
+
+.edu-container .add-edu label,
+.edu-container .add-edu input {
+    display: block;
+    width: 100%;
+}
+
+.edu-container .add-edu label {
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+
+.edu-container .add-edu input {
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
