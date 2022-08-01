@@ -1,7 +1,10 @@
-
+.edulist-container {
+    margin-bottom: 15px;
+}
 .edulist-container .eduitems {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     /* border-bottom: 1px solid #333; */
     margin: 8px auto;
     background-color: #e0e0e0;
@@ -9,8 +12,22 @@
     border-radius: 8px;
 }
 
+.edulist-container .eduitems div {
+    width: 100%;
+}
+
+.edulist-container .eduitems .btns-container {
+    width: 120px;
+}
+
+.edulist-container .eduitems .long-contents {
+    width: 160%;
+    padding-right: 15px;
+}
+
 .edulist-container .eduitems button {
-    width: fit-content;
+    width: 100%;
+    display: block;
     padding: 5px 15px;
     color: #fff;
     border: none;
@@ -22,6 +39,7 @@
 
 .edulist-container .eduitems .edit-btn {
     background-color: #2ecc71;
+    margin-bottom: 5px;
 }
 .edulist-container .eduitems .delete-btn {
     background-color: #e74c3c;
@@ -31,6 +49,11 @@
     margin-bottom: 5px;
 }
 
-.edulist-container .eduitems div {
-    width: 100%;
+
+.edulist-container .eduitems .row {
+    width: fit-content;
+    height: 40px;
+    padding: 0 20px 0 10px;
+    margin-right: 20px;
+    border-right: 1px solid #777;
 }

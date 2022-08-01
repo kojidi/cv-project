@@ -20,40 +20,53 @@
     font-size: 1rem
 }
 
-.edu-container .add-btn {
-        background-color: #2980b9;
+.edu-forms-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
 }
-.edu-container .add-edu .add-btn {
+
+.edu-forms-container p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #2980b9;
+}
+
+.edu-container .add-btn {
+    background-color: #2980b9;
+}
+
+.edu-container .adding-btns .add-btn {
     background-color: #2ecc71;
     margin-right: 5px;
 }
+
 .edu-container .cancel-btn {
     background-color: #e74c3c;
 }
 
 .add-edu {
     /* margin: 15px; */
-    padding: 5px;
-    background-color: #fff;
-    border-radius: 10px;
     display: flex;
     justify-content: space-evenly;
+    gap: 15px;
+    margin-bottom: 15px;
 }
+
+/* .update-edu {
+    margin-bottom: 10px;
+} */
 
 .add-edu .left-inputs,
 .add-edu .right-inputs {
     width: 100%;
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 .add-edu .right-inputs {
     position: relative;
-}
-
-.adding-btns {
-    position: absolute;
-    bottom: 25px;
-    right: 15px;
 }
 
 .edu-container .add-edu label,
@@ -63,7 +76,7 @@
 }
 
 .edu-container .add-edu label {
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     margin-left: 5px;
 }
 
