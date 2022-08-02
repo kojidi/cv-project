@@ -200,7 +200,7 @@ class EducationalInformation extends React.Component {
                             <input id="title" placeholder="Enter the title" value={values.title} name="title" onChange={this.handleChange}/>
                             <label htmlFor="university"><b>University's Name:</b> </label>
                             <input id="university" placeholder="Enter the name ..." value={values.university} name="university" onChange={this.handleChange}/>
-                            <label htmlFor="degree"><b>University's Name:</b> </label>
+                            <label htmlFor="degree"><b>Degree:</b> </label>
                             <input id="degree" placeholder="Your Degree" value={values.degree} name="degree" onChange={this.handleChange}/>
                         </div>
                         <div className="right-inputs">
