@@ -1,9 +1,9 @@
 import React from "react";
-import Educations from "./Educations";
+import Jobs from "./Jobs";
 import '../styles/EducationalStyle.css';
 import uniqid from 'uniqid';
 
-class EducationalInformation extends React.Component {
+class JobsForm extends React.Component {
     constructor() {
         super();
 
@@ -91,6 +91,12 @@ class EducationalInformation extends React.Component {
     }
 
     handleDelete(e) {
+
+        this.setState({
+            addingStatus: false,
+            editingStatus: false
+        })
+
         if(window.confirm("Are you sure")) {
             const result = this.state.edus.filter(d => {
                 return d.id !== e.target.name
@@ -150,8 +156,8 @@ class EducationalInformation extends React.Component {
         const {addingStatus, values, editValues, edus, editingStatus} = this.state;
         console.log(edus);
         return (
-            <div className="edu-container">
-                <h2>Education: </h2>
+            <div className="edu-container jobs">
+                <h2>Job Experiences: </h2>
 
                 {editingStatus ? 
                     <div className="edu-forms-container">
@@ -159,11 +165,11 @@ class EducationalInformation extends React.Component {
                         
                         <div className="add-edu update-edu">
                             <div className="left-inputs">
-                                <label htmlFor="title"><b>Title:</b> </label>
+                                <label htmlFor="title"><b>Company:</b> </label>
                                 <input id="title" placeholder="Enter the title" value={editValues.title} name="title" onChange={this.handleEditChange}/>
-                                <label htmlFor="university"><b>University's Name:</b> </label>
+                                <label htmlFor="university"><b>City:</b> </label>
                                 <input id="university" placeholder="Enter the name ..." value={editValues.university} name="university" onChange={this.handleEditChange}/>
-                                <label htmlFor="degree"><b>Degree:</b> </label>
+                                <label htmlFor="degree"><b>Role:</b> </label>
                                 <input id="degree" placeholder="Your Degree" value={editValues.degree} name="degree" onChange={this.handleEditChange}/>
 
                             </div>
@@ -173,7 +179,7 @@ class EducationalInformation extends React.Component {
                                 <input id="from-year" placeholder="YYYY" value={editValues.fromYear} name="fromYear" onChange={this.handleEditChange}/>
                                 <label htmlFor="to-year"><b>To:</b> </label>
                                 <input id="to-year" placeholder="YYYY" value={editValues.toYear} name="toYear" onChange={this.handleEditChange}/>
-                                <label htmlFor="grade"><b>Grade:</b> </label>
+                                <label htmlFor="grade"><b>Description:</b> </label>
                                 <input id="grade" placeholder="Your Final Grade" value={editValues.grade} name="grade" onChange={this.handleEditChange}/>
                             </div>
                         </div>
@@ -186,7 +192,7 @@ class EducationalInformation extends React.Component {
                     null
                 }
 
-                <Educations data={edus} handleDeleteEdu={this.handleDelete} handleEditEdu={this.handleEditEdu}/>
+                <Jobs data={edus} handleDeleteEdu={this.handleDelete} handleEditEdu={this.handleEditEdu}/>
 
                 {!addingStatus ? 
                     <button className="btn add-btn" onClick={this.handleAddingStatus}>+Add</button>
@@ -196,11 +202,11 @@ class EducationalInformation extends React.Component {
                 <div className="edu-forms-container">
                     <div className="add-edu">
                         <div className="left-inputs">
-                            <label htmlFor="title"><b>Title:</b> </label>
+                            <label htmlFor="title"><b>Company:</b> </label>
                             <input id="title" placeholder="Enter the title" value={values.title} name="title" onChange={this.handleChange}/>
-                            <label htmlFor="university"><b>University's Name:</b> </label>
+                            <label htmlFor="university"><b>City:</b> </label>
                             <input id="university" placeholder="Enter the name ..." value={values.university} name="university" onChange={this.handleChange}/>
-                            <label htmlFor="degree"><b>Degree:</b> </label>
+                            <label htmlFor="degree"><b>Role:</b> </label>
                             <input id="degree" placeholder="Your Degree" value={values.degree} name="degree" onChange={this.handleChange}/>
                         </div>
                         <div className="right-inputs">
@@ -208,7 +214,7 @@ class EducationalInformation extends React.Component {
                             <input id="from-year" placeholder="YYYY" value={values.fromYear} name="fromYear" onChange={this.handleChange}/>
                             <label htmlFor="to-year"><b>To:</b> </label>
                             <input id="to-year" placeholder="YYYY" value={values.toYear} name="toYear" onChange={this.handleChange}/>
-                            <label htmlFor="grade"><b>Grade:</b> </label>
+                            <label htmlFor="grade"><b>Description:</b> </label>
                             <input id="grade" placeholder="Your Final Grade" value={values.grade} name="grade" onChange={this.handleChange}/>
                         </div>
                     </div>
@@ -224,4 +230,4 @@ class EducationalInformation extends React.Component {
     }
 }
 
-export default EducationalInformation;
+export default JobsForm;
