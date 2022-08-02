@@ -154,7 +154,7 @@ class EducationalForm extends React.Component {
     
     render() {
         const {addingStatus, values, editValues, edus, editingStatus} = this.state;
-        console.log(edus);
+
         return (
             <div className="edu-container">
                 <h2>Education: </h2>

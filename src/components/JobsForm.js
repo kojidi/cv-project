@@ -149,12 +149,11 @@ class JobsForm extends React.Component {
         this.setState({
             editingStatus: false
         })
-        // console.log("Update");
     }
     
     render() {
         const {addingStatus, values, editValues, edus, editingStatus} = this.state;
-        console.log(edus);
+
         return (
             <div className="edu-container jobs">
                 <h2>Job Experiences: </h2>

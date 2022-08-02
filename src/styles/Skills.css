@@ -1,0 +1,26 @@
+.edulist-container .eduitems {
+    align-items: center;
+}
+
+.edulist-container .eduitems p {
+    margin: 0;
+}
+
+.edulist-container .eduitems .skills {
+    width: fit-content;
+    display: inline-block;
+    margin: 0;
+}
+
+.edulist-container .eduitems .skills:first-child {
+    margin-right: 5px;
+}
+
+.edulist-container .eduitems .skills-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edulist-container .eduitems .row {
+    height: 100%;
+}

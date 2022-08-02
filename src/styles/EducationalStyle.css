@@ -5,6 +5,11 @@
     padding: 40px;
 }
 
+.edu-container.skill-container {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 .edu-container.jobs {
     background-color: #fff;
 }
